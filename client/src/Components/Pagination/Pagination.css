@@ -1,0 +1,37 @@
+.Pagination {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items:center;
+}
+
+.button{
+background-color: grey;
+display: inline;
+}
+
+.buttonIsHidden {
+    visibility: hidden;
+    display: inline;
+}
+
+.page {
+    background-color: grey;
+    color:black;
+    cursor: pointer;
+    list-style:none;
+    display: inline;
+}
+
+.page:hover{
+    background-color: white;
+}
+
+.pageisCurrent {
+    background-color: rgb(39, 39, 214);
+    color: white;
+    cursor: auto;
+    list-style:none;
+    display: inline;
+}

@@ -1,0 +1,24 @@
+.home {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.page {
+    background-color: grey;
+    color:black
+}
+
+.pageisCurrent {
+    background-color: rgb(39, 39, 214);
+    color: white;
+}
+
+.button {
+    background-color: grey;
+    color: black;
+}
+
+.buttonIsHidden {
+    visibility: hidden;
+}

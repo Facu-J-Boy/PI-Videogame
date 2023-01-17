@@ -1,0 +1,9 @@
+.option {
+  background-color: rgb(219, 47, 47);
+  color:black;
+}
+
+.checked {
+  background-color: rgb(90, 21, 90);
+  color: white;
+}
