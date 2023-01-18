@@ -1,0 +1,71 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  max-width: 1000px;
+  margin: 100px auto 0;
+  padding-left: 0%;
+  font-family: sans-serif;
+  background: white;
+  color: #3278B1;
+}
+
+body p {
+  padding: 80px 0 40px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  text-align: center;
+}
+
+.loader {
+  position: absolute;
+  left: 50%;
+  display: inline-block;
+  margin-left: -32px;
+  width: 64px;
+  height: 64px;
+  border: 3px solid #3278B1;
+  border-radius: 50%;
+  animation: spin 0.75s infinite linear;
+}
+
+.loader::before,
+.loader::after {
+  left: -3px;
+  top: -3px;
+  display: none;
+  position: absolute;
+  content: '';
+  width: inherit;
+  height: inherit;
+  border: inherit;
+  border-radius: inherit;
+}
+
+/*
+ * LOADER 5
+ */
+
+.loader-5,
+.loader-5::before {
+  display: inline-block;
+  border-color: transparent;
+  border-top-color: #3278B1;
+}
+
+.loader-5::before {
+  animation: spin 5s infinite ease;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

@@ -5,6 +5,7 @@ import {getAllVideogames} from '../../redux/Actions/index.js';
 import { Card } from '../Card/Card.jsx';
 import Pagination from '../Pagination/Pagination';
 import NavBar from '../NavBar/NavBar';
+import Loading from '../Loading/Loading';
 
 const Home = () => {
 
@@ -51,7 +52,9 @@ const Home = () => {
       </div>
     <div>
       <div  className = 'home'>
-        {games.map((e) => {
+        {!date.length? <Loading />
+        :
+        games.map((e) => {
          return (
          <Card 
          key = {e.id}
@@ -67,6 +70,7 @@ const Home = () => {
       </div>
       <div>
         <Pagination
+        date = {date}
         gamesPerPage={gamesPerPage} 
         totalVideoGames={totalVideoGames}
         onPreviousPage={onPreviousPage}

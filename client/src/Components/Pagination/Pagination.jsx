@@ -2,7 +2,7 @@ import './Pagination.css';
 import React from 'react';
 
 
-const Pagination = ({gamesPerPage, currentPage, onPreviousPage, onNextPage, onSpecificPage, totalVideoGames}) => {
+const Pagination = ({date, gamesPerPage, currentPage, onPreviousPage, onNextPage, onSpecificPage, totalVideoGames}) => {
 
     const pageNumber = [];
 
@@ -13,7 +13,7 @@ const Pagination = ({gamesPerPage, currentPage, onPreviousPage, onNextPage, onSp
   return (
     <div className='Pagination'>
         <button className={`button${currentPage === 1?'IsHidden': ''}`} onClick={onPreviousPage}>Prev</button>
-        <button className={`button${currentPage === pageNumber.length?'IsHidden':''}`} onClick={onNextPage}>Next</button>
+        <button className={`button${currentPage === pageNumber.length || !date.length?'IsHidden':''}`} onClick={onNextPage}>Next</button>
         <div>
             {pageNumber.map((e) => 
             {return (
