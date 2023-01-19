@@ -4,14 +4,14 @@
   box-sizing: border-box;
 }
 
-body {
+/* body {
   max-width: 1000px;
   margin: 100px auto 0;
   padding-left: 0%;
   font-family: sans-serif;
   background: white;
-  color: #3278B1;
-}
+  /* color: #3278B1; */
+/* } */ */
 
 body p {
   padding: 80px 0 40px;
@@ -24,6 +24,7 @@ body p {
 .loader {
   position: absolute;
   left: 50%;
+  top: 50%;
   display: inline-block;
   margin-left: -32px;
   width: 64px;
