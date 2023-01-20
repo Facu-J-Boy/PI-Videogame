@@ -11,22 +11,18 @@ const Pagination = ({date, gamesPerPage, currentPage, onPreviousPage, onNextPage
     }
 
   return (
-    <div className='Pagination'>
-        <button className={`button${currentPage === 1?'IsHidden': ''}`} onClick={onPreviousPage}>Prev</button>
-        <button className={`button${currentPage === pageNumber.length || !date.length?'IsHidden':''}`} onClick={onNextPage}>Next</button>
-        <div>
+    <nav className='Pagination'>
+        <li className={`button${currentPage === 1?'IsHidden': ''} page`} onClick={onPreviousPage}>{"<"}</li>
             {pageNumber.map((e) => 
             {return (
-                <ol key={e}>
-                  <ul className={
-                    `page${e === currentPage? 'isCurrent': ''
-                }`} onClick={() => onSpecificPage(e)} >
-                    {e}
-                  </ul>
-                </ol>
+              <li key={e} className={
+                `page${e === currentPage? 'isCurrent': ''
+              }`} onClick={() => onSpecificPage(e)} >
+                  <span>{e}</span>                    
+                  </li>
             )})}
-        </div>
-    </div>
+        <li className={`button${currentPage === pageNumber.length || !date.length?'IsHidden':''} page`} onClick={onNextPage}>{">"}</li>
+    </nav>
   )
 }
 

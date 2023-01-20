@@ -1,37 +1,45 @@
 .Pagination {
-    display: flex;
+    display: inline;
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: center;
     align-items:center;
-}
+ }
 
 .button{
 background-color: grey;
 display: inline;
+flex-direction: row;
+justify-content: flex-start;
 }
 
 .buttonIsHidden {
     visibility: hidden;
     display: inline;
-}
-
-.page {
-    background-color: grey;
-    color:black;
-    cursor: pointer;
-    list-style:none;
-    display: inline;
+    flex-direction: row;
 }
 
 .page:hover{
     background-color: white;
 }
 
+.page{
+    border-radius: 20px;
+    padding: 5px;
+    flex-direction: row;
+    display: inline;
+    cursor: pointer;
+    margin: 5px;
+    text-align: center;
+}
+
 .pageisCurrent {
+    border-radius: 20px;
+    background-size: auto auto;
+    padding: 5px;
     background-color: rgb(39, 39, 214);
     color: white;
     cursor: auto;
     list-style:none;
     display: inline;
-}
+} 

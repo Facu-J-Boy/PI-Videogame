@@ -51,6 +51,19 @@ const Home = () => {
         <hr/>
       </div>
     <div>
+        <br/>
+        <br/>
+      <Pagination
+        date = {date}
+        gamesPerPage={gamesPerPage} 
+        totalVideoGames={totalVideoGames}
+        onPreviousPage={onPreviousPage}
+        onNextPage={onNextPage}
+        onSpecificPage={onSpecificPage}
+        currentPage={currentPage}
+        />
+        <br/>
+        <br/>
       <div  className = 'home'>
         {!date.length? <Loading />
         :
@@ -69,6 +82,8 @@ const Home = () => {
        })}
       </div>
       <div>
+        <br/>
+        <br/>
         <Pagination
         date = {date}
         gamesPerPage={gamesPerPage} 
@@ -78,6 +93,10 @@ const Home = () => {
         onSpecificPage={onSpecificPage}
         currentPage={currentPage}
         />
+        <br/>
+        <br/>
+        <br/>
+        <br/>
       </div>
     </div>
     </div>
