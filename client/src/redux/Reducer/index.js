@@ -10,6 +10,7 @@ import {
      ORDER_BY_NAME,
      ORDER_BY_RATING,
      CLEAR_VIDEOGAMES,
+     SEARCH_VIDEOGAME_ERROR,
 } from "../Actions";
 
 const initialState = {
@@ -18,11 +19,19 @@ const initialState = {
     gameDetail: {}, 
     genres: [],
     platforms: [],
-    postVideogame: {}
+    postVideogame: {},
+    error: null,
 };
+
+console.log(initialState.error)
 
 const rootReducer = (state = initialState, action) => {
     switch (action.type) {
+        case SEARCH_VIDEOGAME_ERROR:
+            return {
+                ...state,
+                error: action.payload.error
+            }
         case CLEAR_VIDEOGAMES:
         return {
             ...state,

@@ -6,11 +6,13 @@ import { Card } from '../Card/Card.jsx';
 import Pagination from '../Pagination/Pagination';
 import NavBar from '../NavBar/NavBar';
 import Loading from '../Loading/Loading';
+import ErrorMessage from '../ErrorMessage/ErrorMessage';
 
 const Home = () => {
 
   const dispatch = useDispatch();
   const date = useSelector((state) => state.allVideogames);
+  const {error} = useSelector((state) => state);
   
   useEffect(() => {
     dispatch(getAllVideogames())
@@ -65,7 +67,11 @@ const Home = () => {
         <br/>
         <br/>
       <div  className = 'home'>
-        {!date.length? <Loading />
+       { error? 
+       <ErrorMessage 
+       error = {error}/>
+        :
+        !date.length? <Loading />
         :
         games.map((e) => {
          return (
