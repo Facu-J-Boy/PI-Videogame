@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom'
-import { searchVideogame, getAllGenres, getAllPlatforms, filterByGenre, filterByPLatform, OrderByName, OrderByRating } from '../../redux/Actions';
+import { searchVideogame, getAllGenres, getAllPlatforms, filterByGenre, filterByPLatform, OrderByName, OrderByRating, clearVideogames } from '../../redux/Actions';
 
 const NavBar = ({setCurrentPage}) => {
 
@@ -35,16 +35,24 @@ const NavBar = ({setCurrentPage}) => {
     setCurrentPage(1);
   };
 
-  useEffect(() => {
+  const handleSubmit = (ev) => {
+    ev.preventDefault();
+    dispatch(clearVideogames());
     dispatch(searchVideogame(name));
+  }
+
+  useEffect(() => {
     dispatch(getAllGenres());
     dispatch(getAllPlatforms());
-  }, [dispatch, name])
+  }, [dispatch])
 
   return (
     <div>
+      <form onSubmit={handleSubmit}>
       <label>Search game: </label>
         <input type='text' value={name} onChange={(ev) => {handleInputChange(ev)}} />
+        <button type='submit' >search</button>
+        </form>
         <label>Filter by: </label>
         <label>genres </label>
         <select onChange={(ev) => {filterGenre(ev)}}>
