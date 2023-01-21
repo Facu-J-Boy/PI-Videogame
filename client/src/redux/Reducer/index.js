@@ -66,21 +66,24 @@ const rootReducer = (state = initialState, action) => {
         case SEARCH_VIDEOGAME:
             return {
                 ...state,
-                allVideogames: !action.payload.length? [] : action.payload
+                allVideogames: !action.payload.length? [] : action.payload,
+                games: action.payload
             }
         case FILTER_BY_GENRE:
             const games = state.games;
             const filteredByGenre = action.payload === 'All'? games : games.filter((e) => e.Genres.includes(action.payload))
             return {
                 ...state,
-                allVideogames: filteredByGenre
+                allVideogames: filteredByGenre,
+                error: !filteredByGenre? 'videogame not found' : state.error = null
             }
         case FILTER_BY_PLATFORM:
             const Games = state.games;
             const filteredByPlatform = action.payload === 'All'? Games : Games.filter((e) => e.Platforms.includes(action.payload))
             return {
                 ...state,
-                allVideogames: filteredByPlatform
+                allVideogames: filteredByPlatform,
+                error: !filteredByPlatform.length? 'videogame not found' : state.error = null
             }
         case ORDER_BY_NAME:
             let orderName = action.payload === 'A-Z'? state.games.sort((a, b) => {
