@@ -1,3 +1,7 @@
+#root{
+    background-color: white;
+}
+
 .home {
     display: flex;
     flex-direction: row;

@@ -4,20 +4,14 @@
   box-sizing: border-box;
 }
 
-/* body {
-  max-width: 1000px;
-  margin: 100px auto 0;
-  padding-left: 0%;
-  font-family: sans-serif;
-  background: white;
-  /* color: #3278B1; */
-/* } */ */
+body {
+  background: black;
+ }
 
 body p {
   padding: 80px 0 40px;
   font-size: 14px;
   font-weight: 500;
-  color: #333;
   text-align: center;
 }
 
@@ -29,7 +23,7 @@ body p {
   margin-left: -32px;
   width: 64px;
   height: 64px;
-  border: 3px solid #3278B1;
+  border: 3px solid rgb(85, 7, 85);
   border-radius: 50%;
   animation: spin 0.75s infinite linear;
 }
@@ -55,7 +49,7 @@ body p {
 .loader-5::before {
   display: inline-block;
   border-color: transparent;
-  border-top-color: #3278B1;
+  border-top-color: rgb(85, 7, 85);
 }
 
 .loader-5::before {
