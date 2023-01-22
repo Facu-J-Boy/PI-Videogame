@@ -1,3 +1,36 @@
 .label{
     color: white;
 }
+    .box{
+        width:90%;
+        max-width:300px;
+    }
+    .search{
+        display:grid;
+        grid-template-columns:1fr 40px;
+        border:1px solid rgb(85, 7, 85);
+    }
+     
+    .search-input{
+        width:100%;
+        padding:.8em;
+        border:none;
+        outline:none;
+    
+    }
+    .search-button{
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        background:rgb(85, 7, 85);
+        cursor:pointer;
+        border:none;
+        outline:none;
+    }
+    .search-button svg{
+        --size:18px;
+        width:var(--size);
+        height:var(--size);
+        fill:white;
+        border: hidden;
+    }
