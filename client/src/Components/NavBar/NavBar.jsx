@@ -1,3 +1,4 @@
+import "./NavBar.css";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
@@ -55,7 +56,7 @@ const NavBar = ({ setCurrentPage }) => {
   }, [dispatch]);
 
   return (
-    <div>
+    <div className="label">
       <form onSubmit={handleSubmit}>
         <label>Search game: </label>
         <input
