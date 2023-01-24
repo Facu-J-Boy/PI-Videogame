@@ -2,7 +2,7 @@ import "./Detail.css";
 import React from "react";
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { getDetail } from "../../redux/Actions/index.js";
+import { clearGameDetail, getDetail } from "../../redux/Actions/index.js";
 
 const Details = (props) => {
   const date = useSelector((state) => state.gameDetail);
@@ -12,6 +12,7 @@ const Details = (props) => {
 
   useEffect(() => {
     dispatch(getDetail(props.match.params.id));
+    return () => dispatch(clearGameDetail());
   }, [dispatch, props.match.params.id]);
 
   return (

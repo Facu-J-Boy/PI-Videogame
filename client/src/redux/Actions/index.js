@@ -12,6 +12,7 @@ export const FILTER_BY_GENRE = 'FILTER_BY_GENRE';
 export const FILTER_BY_PLATFORM = 'FILTER_BY_PLATFORM';
 export const ORDER_BY_NAME = 'ORDER_BY_NAME';
 export const ORDER_BY_RATING = 'ORDER_BY_RATING';
+export const CLEAR_GAME_DETAIL = 'CLEAR_GAME_DETAIL';
 
 export const getAllVideogames = () => {
     return async(dispatch) => {
@@ -96,5 +97,9 @@ export const clearVideogames = () => {
     };
 };
 
-
-
+export const clearGameDetail = () => {
+    return {
+        type: CLEAR_GAME_DETAIL,
+        payload: {}
+    };
+};

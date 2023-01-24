@@ -11,6 +11,7 @@ import {
      ORDER_BY_RATING,
      CLEAR_VIDEOGAMES,
      SEARCH_VIDEOGAME_ERROR,
+     CLEAR_GAME_DETAIL,
 } from "../Actions";
 
 const initialState = {
@@ -31,6 +32,11 @@ const rootReducer = (state = initialState, action) => {
             return {
                 ...state,
                 error: action.payload.error
+            }
+        case CLEAR_GAME_DETAIL:
+            return {
+                ...state,
+                gameDetail: action.payload
             }
         case CLEAR_VIDEOGAMES:
         return {
