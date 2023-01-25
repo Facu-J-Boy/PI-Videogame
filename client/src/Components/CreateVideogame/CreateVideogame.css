@@ -7,3 +7,46 @@
   background-color: rgb(90, 21, 90);
   color: white;
 }
+
+.space{
+  color: white;
+}
+
+.input{
+  border-radius: 5px;
+  padding: 10px;
+  margin-left: 10px;
+}
+
+.formField {
+  margin-top: 5%;
+  margin-bottom: 5px;
+  margin-left: 40%;
+  width: 600px;
+  height: 700px;
+  border: solid;
+  border-color: white; 
+  grid-auto-rows: auto;
+  align-items: flex-start;
+}
+
+.label{
+  /* display: flex; */
+  margin-left: 5px;
+  display: block;
+}
+
+.checkboxContainer{
+  /* grid-auto-flow: column; */
+  align-items: flex-start;
+  /* flex-direction: column; */
+  height: 100%;
+  width: 100%;
+}
+
+.checkboxElement{
+  display: inline;
+  margin: 2px;
+  align-content: flex-start;
+  /* flex-direction: row; */
+}
