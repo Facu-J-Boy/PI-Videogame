@@ -7,6 +7,7 @@ import {
   getAllPlatforms,
   PostVideogame,
 } from "../../redux/Actions/index.js";
+import Loading from "../Loading/Loading";
 
 const CreateVideogame = () => {
   const dispatch = useDispatch();
@@ -73,7 +74,9 @@ const CreateVideogame = () => {
     dispatch(PostVideogame(game));
   };
 
-  return (
+  return !genres.length && !platforms.length ? (
+    <Loading />
+  ) : (
     <div className="space">
       <div className="formField">
         <form
