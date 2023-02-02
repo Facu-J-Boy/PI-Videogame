@@ -1,11 +1,20 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./CreateVideogame.css";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { PostVideogame } from "../../redux/Actions/index.js";
+import {
+  getAllGenres,
+  getAllPlatforms,
+  PostVideogame,
+} from "../../redux/Actions/index.js";
 
 const CreateVideogame = () => {
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getAllGenres());
+    dispatch(getAllPlatforms());
+  }, [dispatch]);
 
   const genres = useSelector((state) => state.genres);
   const platforms = useSelector((state) => state.platforms);
@@ -21,6 +30,8 @@ const CreateVideogame = () => {
     platforms: [],
   });
 
+  console.log(game);
+
   const handleInputChange = (ev) => {
     setGame({
       ...game,
@@ -28,17 +39,22 @@ const CreateVideogame = () => {
     });
   };
 
-  // const handleGenresChange = (ev) => {
-  //   if (game.genres.includes(ev.target.value)) {
-  //     game.genres = game.genres.filter((e) => e !== ev.target.value);
-  //   } else {
-  //     setGame({
-  //       ...game,
-  //       [ev.target.name]: [...game.genres, ev.target.value],
-  //     });
-  //   }
-  //   console.log(game.genres);
-  // };
+  const handleGenresChange = (ev) => {
+    //   if (game.genres.includes(ev.target.value)) {
+    //     game.genres = game.genres.filter((e) => e !== ev.target.value);
+    //   } else {
+    ev.target.checked
+      ? setGame({
+          ...game,
+          [ev.target.name]: [...game.genres, ev.target.value],
+        })
+      : setGame({
+          ...game,
+          [ev.target.name]: game.genres.filter((el) => el !== ev.target.value),
+        });
+    // }
+    console.log(game.genres);
+  };
 
   // const handlePlatformsChannge = (ev) => {
   //   if (game.platforms.includes(ev.target.value)) {
@@ -142,6 +158,11 @@ const CreateVideogame = () => {
                       type="checkbox"
                       id={e.id}
                       key={e.id}
+                      name="genres"
+                      value={e.name}
+                      onChange={(ev) => {
+                        handleGenresChange(ev);
+                      }}
                     ></input>
                     <label>{e.name}</label>
                   </div>
