@@ -41,9 +41,6 @@ const CreateVideogame = () => {
   };
 
   const handleGenresChange = (ev) => {
-    //   if (game.genres.includes(ev.target.value)) {
-    //     game.genres = game.genres.filter((e) => e !== ev.target.value);
-    //   } else {
     ev.target.checked
       ? setGame({
           ...game,
@@ -53,21 +50,21 @@ const CreateVideogame = () => {
           ...game,
           [ev.target.name]: game.genres.filter((el) => el !== ev.target.value),
         });
-    // }
-    console.log(game.genres);
   };
 
-  // const handlePlatformsChannge = (ev) => {
-  //   if (game.platforms.includes(ev.target.value)) {
-  //     game.platforms = game.platforms.filter((e) => e !== ev.target.value);
-  //   } else {
-  //     setGame({
-  //       ...game,
-  //       [ev.target.name]: [...game.platforms, ev.target.value],
-  //     });
-  //   }
-  //   console.log(game.platforms);
-  // };
+  const handlePlatformsChannge = (ev) => {
+    ev.target.checked
+      ? setGame({
+          ...game,
+          [ev.target.name]: [...game.platforms, ev.target.value],
+        })
+      : setGame({
+          ...game,
+          [ev.target.name]: game.platforms.filter(
+            (el) => el !== ev.target.value
+          ),
+        });
+  };
 
   const handleSubmit = (ev) => {
     ev.preventDefault();
@@ -183,6 +180,11 @@ const CreateVideogame = () => {
                     type="checkbox"
                     id={e.id}
                     key={e.id}
+                    name="platforms"
+                    value={e.name}
+                    onChange={(ev) => {
+                      handlePlatformsChannge(ev);
+                    }}
                   ></input>
                   <label>{e.name}</label>
                 </div>
