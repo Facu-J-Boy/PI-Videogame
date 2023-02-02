@@ -163,7 +163,7 @@ const CreateVideogame = () => {
                         handleGenresChange(ev);
                       }}
                     ></input>
-                    <label>{e.name}</label>
+                    <label htmlFor={e.id}>{e.name}</label>
                   </li>
                 );
               })}
@@ -184,7 +184,7 @@ const CreateVideogame = () => {
                       handlePlatformsChannge(ev);
                     }}
                   ></input>
-                  <label>{e.name}</label>
+                  <label htmlFor={e.id}>{e.name}</label>
                 </li>
               );
             })}
