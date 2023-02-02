@@ -71,7 +71,7 @@ const CreateVideogame = () => {
     dispatch(PostVideogame(game));
   };
 
-  return !genres.length && !platforms.length ? (
+  return !genres.length || !platforms.length ? (
     <Loading />
   ) : (
     <div className="space">
@@ -152,12 +152,11 @@ const CreateVideogame = () => {
             <div className="checkboxContainer">
               {genres?.map((e) => {
                 return (
-                  <div className="checkboxElement">
+                  <li key={e.id} className="checkboxElement">
                     <input
                       className="checkbox"
                       type="checkbox"
                       id={e.id}
-                      key={e.id}
                       name="genres"
                       value={e.name}
                       onChange={(ev) => {
@@ -165,7 +164,7 @@ const CreateVideogame = () => {
                       }}
                     ></input>
                     <label>{e.name}</label>
-                  </div>
+                  </li>
                 );
               })}
             </div>
@@ -174,12 +173,11 @@ const CreateVideogame = () => {
             <label className="label">Select platforms:</label>
             {platforms?.map((e) => {
               return (
-                <div className="checkboxElement">
+                <li key={e.id} className="checkboxElement">
                   <input
                     className="checkbox"
                     type="checkbox"
                     id={e.id}
-                    key={e.id}
                     name="platforms"
                     value={e.name}
                     onChange={(ev) => {
@@ -187,7 +185,7 @@ const CreateVideogame = () => {
                     }}
                   ></input>
                   <label>{e.name}</label>
-                </div>
+                </li>
               );
             })}
           </div>
