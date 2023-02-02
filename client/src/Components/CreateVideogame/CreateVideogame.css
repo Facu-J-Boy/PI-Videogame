@@ -40,9 +40,10 @@
   /* width: 620px; */
   /* height: 700px; */
   border: solid;
-  border-color: white; 
+  border-color: black; 
   grid-auto-rows: auto;
   align-items: flex-start;
+  box-shadow: 2px 4px 10px 4px rgb(85, 7, 80);
   /* align-content: flex-start; */
 }
 
