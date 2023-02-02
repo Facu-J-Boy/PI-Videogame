@@ -190,7 +190,9 @@ const CreateVideogame = () => {
             })}
           </div>
           <div>
-            <button type="submit">Create</button>
+            <button className="button" type="submit">
+              Create
+            </button>
           </div>
         </form>
       </div>

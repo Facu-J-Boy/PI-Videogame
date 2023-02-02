@@ -40,7 +40,7 @@
   /* width: 620px; */
   /* height: 700px; */
   border: solid;
-  border-color: black; 
+  border-color: rgb(85, 7, 80); 
   grid-auto-rows: auto;
   align-items: flex-start;
   box-shadow: 2px 4px 10px 4px rgb(85, 7, 80);
@@ -85,4 +85,21 @@
 .checkbox:checked + label:before {
   background-color: rgb(85, 7, 85);
   box-shadow: 2px 4px 10px 4px rgb(80, 7, 75);
+}
+
+.button{
+  padding: 5px;
+  width: 120px;
+  height: 60px;
+  margin: 20px;
+  background-color: rgb(85, 7, 85);
+  color: white;
+  border-radius: 10%;
+  cursor: pointer
+}
+
+.button:hover{
+  background-color: white;
+    color: rgb(85, 7, 85);
+    box-shadow: 2px 4px 10px 4px rgb(85, 7, 85);
 }
