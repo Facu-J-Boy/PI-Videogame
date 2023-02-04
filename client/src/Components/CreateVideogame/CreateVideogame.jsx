@@ -82,70 +82,86 @@ const CreateVideogame = () => {
             handleSubmit(ev);
           }}
         >
-          <div>
-            <label className="label">Name:</label>
-            <input
-              className="input"
-              type="text"
-              placeholder="name"
-              name="name"
-              value={game.name}
-              onChange={(ev) => {
-                handleInputChange(ev);
-              }}
-            />
-          </div>
-          <div>
-            <label className="label">Image:</label>
-            <input
-              className="input"
-              type="file"
-              name="background_image"
-              value={game.background_image}
-              onChange={(ev) => {
-                handleInputChange(ev);
-              }}
-            />
-          </div>
-          <div>
-            <label className="label">Description:</label>
-            <input
-              className="input"
-              type="text"
-              placeholder="description"
-              name="description"
-              value={game.description}
-              onChange={(ev) => {
-                handleInputChange(ev);
-              }}
-            />
-          </div>
-          <div>
-            <label className="label">Released:</label>
-            <input
-              className="input"
-              type="date"
-              name="released"
-              value={game.released}
-              onChange={(ev) => {
-                handleInputChange(ev);
-              }}
-            />
-          </div>
-          <div>
-            <label className="label">Rating:</label>
-            <input
-              className="input"
-              type="number"
-              name="rating"
-              value={game.rating}
-              step="0.1"
-              min="0"
-              max="5"
-              onChange={(ev) => {
-                handleInputChange(ev);
-              }}
-            />
+          <div className="inputArea">
+            <div>
+              <label className="label">Name:</label>
+              <input
+                className="input"
+                type="text"
+                placeholder="name"
+                name="name"
+                value={game.name}
+                onChange={(ev) => {
+                  handleInputChange(ev);
+                }}
+              />
+            </div>
+            <div>
+              <div className="custom-input-file col-md-6 col-sm-6 col-xs-6">
+                {/* <label className="fileContainer">Image:</label> */}
+                <input
+                  id="fichero-tarifas"
+                  className="input-file"
+                  aria-label="Archivo"
+                  type="file"
+                  name="background_image"
+                  value={game.background_image}
+                  onChange={(ev) => {
+                    handleInputChange(ev);
+                  }}
+                />
+                {"select a image"}
+              </div>
+              <img
+                className="image"
+                src={`https://${game?.background_image}`}
+                alt="..."
+                onError={(ev) => {
+                  ev.target.src =
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2LMrAuTx6iby0J0ItKPAqYkeuYHwbCKxSUA&usqp=CAU";
+                }}
+              />
+            </div>
+            <div>
+              <label className="label">Description:</label>
+              <input
+                className="input"
+                type="text"
+                placeholder="description"
+                name="description"
+                value={game.description}
+                onChange={(ev) => {
+                  handleInputChange(ev);
+                }}
+              />
+            </div>
+            <div>
+              <label className="label">Released:</label>
+              <input
+                className="input"
+                type="date"
+                name="released"
+                value={game.released}
+                onChange={(ev) => {
+                  handleInputChange(ev);
+                }}
+              />
+            </div>
+            <div>
+              <label className="label">Rating:</label>
+              <input
+                className="input"
+                type="number"
+                name="rating"
+                value={game.rating}
+                step="0.1"
+                min="0"
+                max="5"
+                onChange={(ev) => {
+                  handleInputChange(ev);
+                }}
+              />
+            </div>
           </div>
           <div>
             <label className="label">Select genres:</label>
