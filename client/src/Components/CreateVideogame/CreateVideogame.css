@@ -136,5 +136,7 @@
 }
 
 .image{
-  border: white;
+  width: 299px;
+    height: 155px;
+    object-fit: cover;
 }

@@ -40,6 +40,21 @@ const CreateVideogame = () => {
     });
   };
 
+  const setFileToBase = (file) => {
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onloadend = () => {
+      setGame({
+        ...game,
+        background_image: reader.result,
+      });
+    };
+  };
+
+  const handleFileChange = (ev) => {
+    setFileToBase(ev.target.files[0]);
+  };
+
   const handleGenresChange = (ev) => {
     ev.target.checked
       ? setGame({
@@ -105,16 +120,16 @@ const CreateVideogame = () => {
                   aria-label="Archivo"
                   type="file"
                   name="background_image"
-                  value={game.background_image}
+                  file={game.background_image}
                   onChange={(ev) => {
-                    handleInputChange(ev);
+                    handleFileChange(ev);
                   }}
                 />
                 {"select a image"}
               </div>
               <img
                 className="image"
-                src={`https://${game?.background_image}`}
+                src={game?.background_image}
                 alt="..."
                 onError={(ev) => {
                   ev.target.src =
