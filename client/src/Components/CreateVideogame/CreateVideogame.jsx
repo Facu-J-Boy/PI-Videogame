@@ -99,18 +99,47 @@ const CreateVideogame = () => {
           }}
         >
           <div className="inputArea">
-            <div>
-              <label className="label">Name:</label>
-              <input
-                className="input"
-                type="text"
-                placeholder="name"
-                name="name"
-                value={game.name}
-                onChange={(ev) => {
-                  handleInputChange(ev);
-                }}
-              />
+            <div className="firstColumn">
+              <div>
+                <label className="label">Name:</label>
+                <input
+                  className="input"
+                  type="text"
+                  placeholder="name"
+                  name="name"
+                  value={game.name}
+                  onChange={(ev) => {
+                    handleInputChange(ev);
+                  }}
+                />
+              </div>
+              <div>
+                <label className="label">Released:</label>
+                <input
+                  className="input"
+                  type="date"
+                  name="released"
+                  value={game.released}
+                  onChange={(ev) => {
+                    handleInputChange(ev);
+                  }}
+                />
+              </div>
+              <div>
+                <label className="label">Rating:</label>
+                <input
+                  className="input"
+                  type="number"
+                  name="rating"
+                  value={game.rating}
+                  step="0.1"
+                  min="0"
+                  max="5"
+                  onChange={(ev) => {
+                    handleInputChange(ev);
+                  }}
+                />
+              </div>
             </div>
             <div>
               <div className="custom-input-file col-md-6 col-sm-6 col-xs-6">
@@ -141,38 +170,10 @@ const CreateVideogame = () => {
             <div>
               <label className="label">Description:</label>
               <input
-                className="input"
+                className="inputDescription"
                 type="text"
-                placeholder="description"
                 name="description"
                 value={game.description}
-                onChange={(ev) => {
-                  handleInputChange(ev);
-                }}
-              />
-            </div>
-            <div>
-              <label className="label">Released:</label>
-              <input
-                className="input"
-                type="date"
-                name="released"
-                value={game.released}
-                onChange={(ev) => {
-                  handleInputChange(ev);
-                }}
-              />
-            </div>
-            <div>
-              <label className="label">Rating:</label>
-              <input
-                className="input"
-                type="number"
-                name="rating"
-                value={game.rating}
-                step="0.1"
-                min="0"
-                max="5"
                 onChange={(ev) => {
                   handleInputChange(ev);
                 }}

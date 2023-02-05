@@ -12,7 +12,6 @@
   color: white;
 }
 
-
 .checkboxContainer{
   /* grid-auto-flow: column; */
   justify-content: flex-start;
@@ -52,6 +51,13 @@
   padding: 10px;
   margin: 20px;
   width: 300px;
+}
+
+.inputDescription{
+  border-radius: 5px;
+  margin: 20px;
+  width: 300px;
+  height: 200px;
 }
 
 .label{
@@ -102,9 +108,15 @@
 
 .inputArea {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: row;
   align-content: flex-start;
   align-items: stretch;
+  justify-content: space-around;
+}
+
+.firstColumn{
+  display: flex;
+  flex-direction: column;
 }
 
 .custom-input-file {
@@ -123,7 +135,7 @@
 }
 
 .custom-input-file .input-file {
- border: 121px solid transparent;
+ border: 110px solid transparent;
  cursor: pointer;
  /* width: 300px; */
  font-size: 196px;
@@ -132,8 +144,8 @@
  /* outline: 0 none; */
  padding: 0;
  position: absolute;
- left: 564px;
- right: 729px;
+ left: 641px;
+ right: 642px;
  height: 236px;
  /* top: -1000px; */
 }
