@@ -23,7 +23,8 @@ const CreateVideogame = () => {
 
   const [game, setGame] = useState({
     name: "",
-    background_image: "",
+    background_image:
+      "https://res.cloudinary.com/dvqh0exq6/image/upload/v1675621139/videogame/n2ms87rhxzstoqdm9gbr.png",
     description: "",
     released: "",
     rating: 0,
@@ -133,7 +134,7 @@ const CreateVideogame = () => {
                 alt="..."
                 onError={(ev) => {
                   ev.target.src =
-                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2LMrAuTx6iby0J0ItKPAqYkeuYHwbCKxSUA&usqp=CAU";
+                    "https://res.cloudinary.com/dvqh0exq6/image/upload/v1675621139/videogame/n2ms87rhxzstoqdm9gbr.png";
                 }}
               />
             </div>

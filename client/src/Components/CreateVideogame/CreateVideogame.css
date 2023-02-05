@@ -117,26 +117,29 @@
   height: 25px;
   /* overflow: hidden; */
   /* padding: 10px; */
-  position: relative;
+  /* position: relative; */
   /* text-align: center; */
   width: 300px;
 }
 
 .custom-input-file .input-file {
- border: 10000px solid transparent;
+ border: 121px solid transparent;
  cursor: pointer;
- font-size: 10000px;
+ /* width: 300px; */
+ font-size: 196px;
  margin: 0;
  opacity: 0;
  /* outline: 0 none; */
  padding: 0;
  position: absolute;
- /* right: -1000px; */
+ left: 564px;
+ right: 729px;
+ height: 236px;
  /* top: -1000px; */
 }
 
 .image{
   width: 299px;
-    height: 155px;
-    object-fit: cover;
+  height: 210px;
+  object-fit: cover;
 }

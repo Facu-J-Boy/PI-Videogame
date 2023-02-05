@@ -16,7 +16,7 @@ module.exports = (sequelize) => {
     },
     background_image: {
       type: DataTypes.STRING,
-      defaultValue: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.freejpg.com.ar%2Fimagenes%2Fpremium%2F1254636533%2Ficono-de-linea-del-controlador-de-juego-gamepad-joystick-vector-sobre-fondo-blanco-aislado-eps-10&psig=AOvVaw36yY4z0uyK-NXZApJhd2Yf&ust=1665876859237000&source=images&cd=vfe&ved=0CA0QjRxqFwoTCJCJmYfx4PoCFQAAAAAdAAAAABAE",
+      defaultValue: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2LMrAuTx6iby0J0ItKPAqYkeuYHwbCKxSUA&usqp=CAU",
       allowNull: false
     },
     description: {
