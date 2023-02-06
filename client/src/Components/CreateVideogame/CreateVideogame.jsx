@@ -8,9 +8,11 @@ import {
   PostVideogame,
 } from "../../redux/Actions/index.js";
 import Loading from "../Loading/Loading";
+import { useHistory } from "react-router-dom";
 
 const CreateVideogame = () => {
   const dispatch = useDispatch();
+  const history = useHistory();
 
   useEffect(() => {
     dispatch(getAllGenres());
@@ -84,6 +86,7 @@ const CreateVideogame = () => {
   const handleSubmit = (ev) => {
     ev.preventDefault();
     dispatch(PostVideogame(game));
+    history.push("/home");
   };
 
   return !genres.length || !platforms.length ? (
@@ -100,7 +103,7 @@ const CreateVideogame = () => {
           <div className="inputArea">
             <div className="firstColumn">
               <div>
-                <label className="label">Name:</label>
+                <label className="imputLabel">Name:</label>
                 <input
                   className="input"
                   type="text"
@@ -113,7 +116,7 @@ const CreateVideogame = () => {
                 />
               </div>
               <div>
-                <label className="label">Released:</label>
+                <label className="imputLabel">Released:</label>
                 <input
                   className="input"
                   type="date"
@@ -125,7 +128,7 @@ const CreateVideogame = () => {
                 />
               </div>
               <div>
-                <label className="label">Rating:</label>
+                <label className="imputLabel">Rating:</label>
                 <input
                   className="input"
                   type="number"
@@ -167,7 +170,7 @@ const CreateVideogame = () => {
               />
             </div>
             <div>
-              <label className="label">Description:</label>
+              <label className="imputLabel">Description:</label>
               <textarea
                 className="inputDescription"
                 type="text"
@@ -180,7 +183,7 @@ const CreateVideogame = () => {
             </div>
           </div>
           <div>
-            <label className="label">Select genres:</label>
+            <label className="imputLabel">Select genres:</label>
             <div className="checkboxContainer">
               {genres?.map((e) => {
                 return (
@@ -202,7 +205,7 @@ const CreateVideogame = () => {
             </div>
           </div>
           <div>
-            <label className="label">Select platforms:</label>
+            <label className="imputLabel">Select platforms:</label>
             {platforms?.map((e) => {
               return (
                 <div key={e.id} className="checkboxElement">
