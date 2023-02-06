@@ -169,7 +169,7 @@ const CreateVideogame = () => {
             </div>
             <div>
               <label className="label">Description:</label>
-              <input
+              <textarea
                 className="inputDescription"
                 type="text"
                 name="description"
@@ -185,7 +185,7 @@ const CreateVideogame = () => {
             <div className="checkboxContainer">
               {genres?.map((e) => {
                 return (
-                  <li key={e.id} className="checkboxElement">
+                  <div key={e.id} className="checkboxElement">
                     <input
                       className="checkbox"
                       type="checkbox"
@@ -197,7 +197,7 @@ const CreateVideogame = () => {
                       }}
                     ></input>
                     <label htmlFor={e.id}>{e.name}</label>
-                  </li>
+                  </div>
                 );
               })}
             </div>
