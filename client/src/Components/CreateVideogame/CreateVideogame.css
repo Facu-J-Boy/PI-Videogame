@@ -35,7 +35,7 @@
 
 .formField {
   margin-top: 5%;
-  margin-bottom: 5px;
+  margin-bottom: 5%;
   margin-left: 14%;
   margin-right: 14%;
   /* width: 620px; */
@@ -70,6 +70,8 @@
   margin-left: 5px;
   margin-right: 5px;
   display: block;
+  background-color: rgb(85, 7, 80);
+  border-radius: 5px;
 }
 
 .checkbox {
@@ -106,9 +108,13 @@
 }
 
 .button:hover{
-  background-color: white;
+    background-color: white;
     color: rgb(85, 7, 85);
     box-shadow: 2px 4px 10px 4px rgb(85, 7, 85);
+}
+
+.buttonHidden {
+  visibility: hidden;
 }
 
 .inputArea {

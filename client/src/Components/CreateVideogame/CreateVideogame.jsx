@@ -23,8 +23,7 @@ const CreateVideogame = () => {
 
   const [game, setGame] = useState({
     name: "",
-    background_image:
-      "https://res.cloudinary.com/dvqh0exq6/image/upload/v1675621139/videogame/n2ms87rhxzstoqdm9gbr.png",
+    background_image: "",
     description: "",
     released: "",
     rating: 0,
@@ -206,7 +205,7 @@ const CreateVideogame = () => {
             <label className="label">Select platforms:</label>
             {platforms?.map((e) => {
               return (
-                <li key={e.id} className="checkboxElement">
+                <div key={e.id} className="checkboxElement">
                   <input
                     className="checkbox"
                     type="checkbox"
@@ -218,12 +217,25 @@ const CreateVideogame = () => {
                     }}
                   ></input>
                   <label htmlFor={e.id}>{e.name}</label>
-                </li>
+                </div>
               );
             })}
           </div>
           <div>
-            <button className="button" type="submit">
+            <button
+              className={
+                !game.name ||
+                !game.background_image ||
+                !game.description ||
+                game.rating > 5 ||
+                !game.released ||
+                !game.genres.length ||
+                !game.platforms.length
+                  ? "buttonHidden"
+                  : "button"
+              }
+              type="submit"
+            >
               Create
             </button>
           </div>
