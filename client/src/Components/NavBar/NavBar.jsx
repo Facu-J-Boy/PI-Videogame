@@ -14,8 +14,9 @@ import {
 } from "../../redux/Actions";
 
 const NavBar = ({ setCurrentPage }) => {
-  const genres = useSelector((state) => state.genres);
-  const platforms = useSelector((state) => state.platforms);
+  const { genres } = useSelector((state) => state);
+  const { platforms } = useSelector((state) => state);
+  const { allVideogames } = useSelector((state) => state);
 
   const dispatch = useDispatch();
 
@@ -72,10 +73,22 @@ const NavBar = ({ setCurrentPage }) => {
               placeholder="Search videogame"
               type="text"
               value={name}
+              list="list"
               onChange={(ev) => {
                 handleInputChange(ev);
               }}
             />
+            <datalist id="list">
+              {!name
+                ? null
+                : allVideogames
+                    .filter((e) =>
+                      e.name.toLowerCase().includes(name.toLowerCase())
+                    )
+                    .map((e) => <option key={e.id}>{e.name}</option>)}
+              {/* <option>Hello</option> */}
+              {/* <option>World</option> */}
+            </datalist>
             <button className="search-button" type="submit">
               <svg className="search" viewBox="0 0 56.966 56.966">
                 {" "}

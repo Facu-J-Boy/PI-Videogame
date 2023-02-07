@@ -235,7 +235,7 @@ const CreateVideogame = () => {
                 !game.genres.length ||
                 !game.platforms.length
                   ? "buttonHidden"
-                  : "button"
+                  : "buttonSubmit"
               }
               type="submit"
             >

@@ -95,7 +95,7 @@
   box-shadow: 2px 4px 10px 4px rgb(80, 7, 75);
 }
 
-.button{
+.buttonSubmit{
   padding: 5px;
   width: 120px;
   height: 60px;
@@ -106,13 +106,14 @@
   cursor: pointer
 }
 
-.button:hover{
+.buttonSubmit:hover{
     background-color: white;
     color: rgb(85, 7, 85);
     box-shadow: 2px 4px 10px 4px rgb(85, 7, 85);
 }
 
 .buttonHidden {
+  display: none;
   visibility: hidden;
 }
 
