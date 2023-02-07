@@ -3,6 +3,7 @@ import "./CreateVideogame.css";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
+  clearVideogames,
   getAllGenres,
   getAllPlatforms,
   PostVideogame,
@@ -19,8 +20,8 @@ const CreateVideogame = () => {
     dispatch(getAllPlatforms());
   }, [dispatch]);
 
-  const genres = useSelector((state) => state.genres);
-  const platforms = useSelector((state) => state.platforms);
+  const { genres } = useSelector((state) => state);
+  const { platforms } = useSelector((state) => state);
   // const postVideogame = useState((state) => state.postVideogame);
 
   const [game, setGame] = useState({
@@ -86,6 +87,7 @@ const CreateVideogame = () => {
   const handleSubmit = (ev) => {
     ev.preventDefault();
     dispatch(PostVideogame(game));
+    dispatch(clearVideogames());
     history.push("/home");
   };
 

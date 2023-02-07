@@ -15,6 +15,7 @@ import {
 } from "../Actions";
 
 const initialState = {
+    allVideogamesName: [],
     allVideogames: [],
     games: [],
     gameDetail: {}, 
@@ -46,6 +47,7 @@ const rootReducer = (state = initialState, action) => {
         case GET_ALL_VIDEOGAMES: 
             return {
                 ...state,
+                allVideogamesName: action.payload?.map((e) => e.name),
                 allVideogames: action.payload,
                 games: action.payload
             }
@@ -67,7 +69,8 @@ const rootReducer = (state = initialState, action) => {
         case POST_VIDEOGAME:
             return {
                 ...state, 
-                postVideogame: action.payload
+                postVideogame: action.payload,
+                allVideogamesName: state.allVideogamesName.push(state.postVideogame?.name)
             }
         case SEARCH_VIDEOGAME:
             return {
