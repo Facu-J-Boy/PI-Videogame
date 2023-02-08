@@ -40,7 +40,15 @@
 }
 
 .rating{
+  display: block;
+  justify-content: center;
   color: white;
+  margin: 10px;
+}
+
+.number{
+    display: inline;
+    margin-left: 5px ;
 }
 
   
