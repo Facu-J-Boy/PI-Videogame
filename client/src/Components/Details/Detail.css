@@ -41,3 +41,15 @@
     border-top-right-radius: 10px;
     background-color:rgb(85, 7, 85);
 }
+
+.rating{
+    display: block;
+    justify-content: center;
+    color: white;
+    margin: 10px;
+  }
+  
+  .number{
+      display: inline;
+      margin-left: 5px ;
+  }
