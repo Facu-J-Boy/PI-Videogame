@@ -44,8 +44,12 @@
 
 .rating{
     display: block;
+    border-radius: 15px;
+    background-color: rgb(85, 7, 85);
+    box-shadow: 2px 4px 10px 4px rgb(85, 7, 85);
     justify-content: center;
     color: white;
+    padding: 5px;
     margin: 10px;
   }
   
