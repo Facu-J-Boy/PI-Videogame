@@ -46,7 +46,6 @@ const all_Games = async () => {
             Genres: e.Genres?.map((g) => g.name)
         }
     });
-    console.log('all_DB_Videogames -->', All_DB_Videogames);
     let All_Data_Games= All_Api_Games.concat(All_DB_Videogames)
     return All_Data_Games;
 };
