@@ -6,6 +6,13 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router } from 'react-router-dom';
 import {Provider} from 'react-redux';
 import store from './redux/Store/index.js';
+import axios from 'axios';
+
+/////AXIOS DB LOCAL/////
+// axios.defaults.baseURL = "http://localhost:3001";
+
+////AXIOS DB RAILWAY////
+axios.defaults.url = "https://pi-videogame-production-5d07.up.railway.app"
 
 ReactDOM.render(
     <Provider store={store}>

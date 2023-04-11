@@ -16,7 +16,7 @@ export const CLEAR_GAME_DETAIL = 'CLEAR_GAME_DETAIL';
 
 export const getAllVideogames = () => {
     return async(dispatch) => {
-        return await Axios.get('http://localhost:3001/videogames')
+        return await Axios.get('/videogames')
         .then(res => {dispatch({type: GET_ALL_VIDEOGAMES, payload: res.data})})
         .catch(error => error);
     };
@@ -24,7 +24,7 @@ export const getAllVideogames = () => {
 
 export const getDetail = (id) => {
     return async(dispatch) => {
-        return await Axios.get(`http://localhost:3001/videogame/${id}`)
+        return await Axios.get(`/videogame/${id}`)
         .then(res => {dispatch({type: GAME_DETAIL, payload: res.data})})
         .catch(error => error);
     };    
@@ -32,7 +32,7 @@ export const getDetail = (id) => {
 
 export const getAllGenres = () => {
     return async(dispatch) => {
-        return await Axios.get('http://localhost:3001/genres')
+        return await Axios.get('/genres')
         .then(res => {dispatch({type: GET_ALL_GENRES, payload: res.data})})
         .catch(error => error);
     };
@@ -40,7 +40,7 @@ export const getAllGenres = () => {
 
 export const getAllPlatforms = () => {
     return async(dispatch) => {
-        return await Axios.get('http://localhost:3001/platforms')
+        return await Axios.get('/platforms')
         .then(res => {dispatch({type: GET_ALL_PLATFORMS, payload: res.data})})
         .catch(error => error);
     };
@@ -48,7 +48,7 @@ export const getAllPlatforms = () => {
 
 export const PostVideogame = (game) => {
     return async(dispatch) => {
-        return await Axios.post('http://localhost:3001/videogames', game)
+        return await Axios.post('/videogames', game)
         .then(res => {dispatch({type: POST_VIDEOGAME, payload: res.data})})
         .catch(error => console.log(error));
     };
@@ -56,7 +56,7 @@ export const PostVideogame = (game) => {
 
 export const searchVideogame = (name) => {
     return async(dispatch) => {
-        return await Axios.get(`http://localhost:3001/videogames?name=${name}`)
+        return await Axios.get(`/videogames?name=${name}`)
         .then(res => {dispatch({type: SEARCH_VIDEOGAME, payload: res.data}, console.log(res.data))})
         .catch(error => {dispatch({type: SEARCH_VIDEOGAME_ERROR, payload: {error: error.response.data}}, console.log(error.response.data))});
     };

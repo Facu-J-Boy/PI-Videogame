@@ -18,6 +18,8 @@ const NavBar = ({ setCurrentPage }) => {
   const { platforms } = useSelector((state) => state);
   const { allVideogamesName } = useSelector((state) => state);
 
+  console.log("Railway -->", process.env.REACT_APP_RAILWAYURL);
+
   const dispatch = useDispatch();
 
   const [name, setName] = useState("");
