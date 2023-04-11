@@ -9,10 +9,10 @@ import store from './redux/Store/index.js';
 import axios from 'axios';
 
 /////AXIOS DB LOCAL/////
-// axios.defaults.baseURL = "http://localhost:3001";
+axios.defaults.baseURL = "http://localhost:3001";
 
 ////AXIOS DB RAILWAY////
-axios.defaults.url = "https://pi-videogame-production-84df.up.railway.app"
+// axios.defaults.url = "https://pi-videogame-production-84df.up.railway.app"
 
 ReactDOM.render(
     <Provider store={store}>
