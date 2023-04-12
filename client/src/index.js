@@ -12,7 +12,7 @@ import axios from 'axios';
 // axios.defaults.baseURL = "http://localhost:3001";
 
 ////AXIOS DB RAILWAY////
-axios.defaults.url = "https://pi-videogame.onrender.com";
+axios.defaults.baseURL = "https://pi-videogame.onrender.com";
 
 ReactDOM.render(
     <Provider store={store}>
