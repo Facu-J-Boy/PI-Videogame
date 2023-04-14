@@ -9,11 +9,11 @@ import {
   PostVideogame,
 } from "../../redux/Actions/index.js";
 import Loading from "../Loading/Loading";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const CreateVideogame = () => {
   const dispatch = useDispatch();
-  const history = useHistory();
+  const history = useNavigate();
 
   useEffect(() => {
     dispatch(getAllGenres());
@@ -33,8 +33,6 @@ const CreateVideogame = () => {
     genres: [],
     platforms: [],
   });
-
-  console.log(game);
 
   const handleInputChange = (ev) => {
     setGame({
