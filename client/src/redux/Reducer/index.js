@@ -25,8 +25,6 @@ const initialState = {
     error: null,
 };
 
-console.log(initialState.error)
-
 const rootReducer = (state = initialState, action) => {
     switch (action.type) {
         case SEARCH_VIDEOGAME_ERROR:
