@@ -17,7 +17,8 @@
     margin: 10px;
     width: 650px;
     height: 500px;
-    object-fit: cover;
+    object-fit: contain;
+    object-position: center center
 }
 
 .detail h3 {
