@@ -8,7 +8,14 @@ const {
 
 //DEPLOY RENDER
 const sequelize = new Sequelize(URL_DATABASE, {
-  logging: false, // set to console.log to see the raw SQL queries  
+  logging: false, // set to console.log to see the raw SQL queries 
+  dialect: 'postgres',
+dialectOptions: {
+  ssl: {
+    require: true, // Requerir SSL/TLS
+    rejectUnauthorized: false // Opcional, esto deshabilita la verificación del certificado SSL
+  }
+}, 
   native: false, // lets Sequelize know we can use pg-native for ~30% more speed
 });
 
