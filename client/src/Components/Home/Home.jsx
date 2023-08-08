@@ -47,7 +47,10 @@ const Home = () => {
   return (
     <div>
       <div>
-        <NavBar setCurrentPage={setCurrentPage} />
+        <NavBar
+          setCurrentPage={setCurrentPage}
+          onSpecificPage={onSpecificPage}
+        />
         <hr />
       </div>
       <div>
@@ -70,7 +73,7 @@ const Home = () => {
           ) : !date.length ? (
             <Loading />
           ) : (
-            games.map((e) => {
+            games?.map((e) => {
               return (
                 <Card
                   key={e.id}

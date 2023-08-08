@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 
 export const Card = (props) => {
   return (
-    <div className="card">
-      <Link to={`/home/game/${props.id}`} className="cardLink">
+    <Link to={`/home/game/${props.id}`} className="cardLink">
+      <div className="card">
         <h3>{props.name}</h3>
         <img
           src={props.background_image}
@@ -22,7 +22,7 @@ export const Card = (props) => {
             </li>
           ))}
         </div>
-        <div className="rating">
+        <div className="cardRating">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="icon icon-tabler icon-tabler-star"
@@ -40,7 +40,7 @@ export const Card = (props) => {
           </svg>
           <h5 className="number">{props.rating}</h5>
         </div>
-      </Link>
-    </div>
+      </div>
+    </Link>
   );
 };

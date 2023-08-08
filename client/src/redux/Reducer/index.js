@@ -1,5 +1,6 @@
 import { 
      GET_ALL_VIDEOGAMES,
+     GET_ALL_VIDEOGAMES_ERROR,
      GAME_DETAIL,
      GET_ALL_GENRES,
      GET_ALL_PLATFORMS,
@@ -49,6 +50,11 @@ const rootReducer = (state = initialState, action) => {
                 allVideogames: action.payload,
                 games: action.payload
             }
+        case GET_ALL_VIDEOGAMES_ERROR: 
+        return {
+            ...state,
+            error: !action.payload? null : "Error loading video games try again"
+        }
         case GAME_DETAIL:
             return {
                 ...state,
@@ -73,7 +79,8 @@ const rootReducer = (state = initialState, action) => {
         case SEARCH_VIDEOGAME:
             return {
                 ...state,
-                allVideogames: !action.payload.length? [] : action.payload,
+                error: !action.payload.length? "videogame not found" : null,
+                allVideogames: action.payload,
                 games: action.payload
             }
         case FILTER_BY_GENRE:

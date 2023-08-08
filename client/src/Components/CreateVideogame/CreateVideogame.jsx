@@ -57,15 +57,17 @@ const CreateVideogame = () => {
   };
 
   const handleGenresChange = (ev) => {
-    ev.target.checked
-      ? setGame({
-          ...game,
-          [ev.target.name]: [...game.genres, ev.target.value],
-        })
-      : setGame({
-          ...game,
-          [ev.target.name]: game.genres.filter((el) => el !== ev.target.value),
-        });
+    if (ev.target.checked) {
+      setGame({
+        ...game,
+        [ev.target.name]: [...game.genres, ev.target.value],
+      });
+    } else {
+      setGame({
+        ...game,
+        [ev.target.name]: game.genres.filter((el) => el !== ev.target.value),
+      });
+    }
   };
 
   const handlePlatformsChannge = (ev) => {
@@ -86,7 +88,7 @@ const CreateVideogame = () => {
     ev.preventDefault();
     dispatch(PostVideogame(game));
     dispatch(clearVideogames());
-    history.push("/home");
+    history("/home");
   };
 
   return !genres.length || !platforms.length ? (
@@ -194,9 +196,13 @@ const CreateVideogame = () => {
                       id={e.id}
                       name="genres"
                       value={e.name}
+                      checked={game.genres.includes(e.name)}
                       onChange={(ev) => {
                         handleGenresChange(ev);
                       }}
+                      disabled={
+                        !game.genres.includes(e.name) && game.genres.length >= 5
+                      }
                     ></input>
                     <label htmlFor={e.id}>{e.name}</label>
                   </div>
@@ -215,9 +221,14 @@ const CreateVideogame = () => {
                     id={e.id}
                     name="platforms"
                     value={e.name}
+                    checked={game.platforms.includes(e.name)}
                     onChange={(ev) => {
                       handlePlatformsChannge(ev);
                     }}
+                    disabled={
+                      !game.platforms.includes(e.name) &&
+                      game.platforms.length >= 5
+                    }
                   ></input>
                   <label htmlFor={e.id}>{e.name}</label>
                 </div>

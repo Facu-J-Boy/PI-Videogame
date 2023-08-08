@@ -1,6 +1,6 @@
 .errorMessage{
     display: flex;
-    margin-left: 50%;
-    margin-right: 50%;
+    align-items: center;
+    justify-content: center;
     color: white;
 }

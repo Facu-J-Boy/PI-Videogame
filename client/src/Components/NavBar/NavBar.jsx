@@ -13,7 +13,7 @@ import {
   clearVideogames,
 } from "../../redux/Actions";
 
-const NavBar = ({ setCurrentPage }) => {
+const NavBar = ({ setCurrentPage, onSpecificPage }) => {
   const { genres } = useSelector((state) => state);
   const { platforms } = useSelector((state) => state);
   const { allVideogamesName } = useSelector((state) => state);
@@ -28,27 +28,31 @@ const NavBar = ({ setCurrentPage }) => {
 
   const filterGenre = (ev) => {
     dispatch(filterByGenre(ev.target.value));
-    console.log(ev.target.value);
+    onSpecificPage(1);
   };
 
   const filterPlatform = (ev) => {
     dispatch(filterByPLatform(ev.target.value));
+    onSpecificPage(1);
   };
 
   const orderName = (ev) => {
     dispatch(OrderByName(ev.target.value));
-    setCurrentPage(1);
+    onSpecificPage(1);
+    // setCurrentPage(1);
   };
 
   const orderRating = (ev) => {
     dispatch(OrderByRating(ev.target.value));
-    setCurrentPage(1);
+    onSpecificPage(1);
+    // setCurrentPage(1);
   };
 
   const handleSubmit = (ev) => {
     ev.preventDefault();
     dispatch(clearVideogames());
     dispatch(searchVideogame(name));
+    onSpecificPage(1);
   };
 
   useEffect(() => {

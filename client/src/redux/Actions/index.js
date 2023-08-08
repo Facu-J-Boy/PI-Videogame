@@ -1,6 +1,7 @@
 import Axios from 'axios';
 
 export const GET_ALL_VIDEOGAMES = 'GET_ALL_VIDEOGAMES';
+export const GET_ALL_VIDEOGAMES_ERROR = 'GET_ALL_VIDEOGAMES_ERROR'
 export const GAME_DETAIL = 'GAME_DETAIL';
 export const GET_ALL_GENRES = 'GET_ALL_GENRES';
 export const GET_ALL_PLATFORMS = 'GET_ALL_PLATFORMS';
@@ -18,7 +19,7 @@ export const getAllVideogames = () => {
     return async(dispatch) => {
         return await Axios.get('/videogames')
         .then(res => {dispatch({type: GET_ALL_VIDEOGAMES, payload: res.data})})
-        .catch(error => error);
+        .catch(error => {dispatch({type: GET_ALL_VIDEOGAMES_ERROR, payload: error})});
     };
 };
 
